@@ -4,21 +4,44 @@ from typing import Optional, List
 
 
 class Solution:
+    # # Mask array
+    # def isValidSudoku(self, board: List[List[str]]) -> bool:
+    #     rows = [[False for _ in range(9)] for _ in range(9)]
+    #     cols = [[False for _ in range(9)] for _ in range(9)]
+    #     boxes = [[False for _ in range(9)] for _ in range(9)]
+    #
+    #     for i, row in enumerate(board):
+    #         for j, n in enumerate(row):
+    #             if n != '.':
+    #                 n = int(n) - 1
+    #                 i_box = i // 3 * 3 + j // 3
+    #                 if rows[i][n] or cols[j][n] or boxes[i_box][n]:
+    #                     return False
+    #                 rows[i][n] = True
+    #                 cols[j][n] = True
+    #                 boxes[i_box][n] = True
+    #     return True
+
+    # Bitmap
     def isValidSudoku(self, board: List[List[str]]) -> bool:
-        rows = [[False for _ in range(9)] for _ in range(9)]
-        cols = [[False for _ in range(9)] for _ in range(9)]
-        boxes = [[False for _ in range(9)] for _ in range(9)]
+        N = len(board)
+
+        rows = [0] * N
+        cols = [0] * N
+        boxes = [0] * N
 
         for i, row in enumerate(board):
             for j, n in enumerate(row):
                 if n != '.':
                     n = int(n) - 1
                     i_box = i // 3 * 3 + j // 3
-                    if rows[i][n] or cols[j][n] or boxes[i_box][n]:
+                    if rows[i] & (1 << n) \
+                            or cols[j] & (1 << n) \
+                            or boxes[i_box] & (1 << n):
                         return False
-                    rows[i][n] = True
-                    cols[j][n] = True
-                    boxes[i_box][n] = True
+                    rows[i] |= 1 << n
+                    cols[j] |= 1 << n
+                    boxes[i_box] |= 1 << n
         return True
 
 
