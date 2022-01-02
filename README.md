@@ -15,10 +15,10 @@ pip install leetcode-tester
 
 ### Problem Tracks
 
-| Number | Name                                                              | Time | Space | Note          |
-|--------|-------------------------------------------------------------------|------|-------|---------------|
-| 0001   | [Two Sum](https://leetcode.com/problems/two-sum/)                 | O(n) | O(n)  | Hash Function |
-| 0002   | [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/) | ac   |||
-| 0026   | Remove Duplicates from Sorted Array                               | ac   |||
-| 0122   | Best Time to Buy and Sell Stock II                                | ac   |||
-| 0189   | Rotate Array                                                      | ac   |||
+| Number | Name                                                                                                      | Difficulty | Time | Space | Notes                     |
+|--------|-----------------------------------------------------------------------------------------------------------|------------|------|-------|---------------------------|
+| 0001   | [Two Sum](https://leetcode.com/problems/two-sum/)                                                         | Easy       | O(n) | O(n)  | Hash Function             |
+| 0002   | [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/)                                         | Medium     | O(n) | O(n)  ||
+| 0026   | [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) | Easy       | O(n) | O(1)  ||
+| 0122   | [Best Time to Buy and Sell Stock II](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/)   | Medium     | O(n) | O(1)  ||
+| 0189   | [Rotate Array](https://leetcode.com/problems/rotate-array/)                                               | Medium     | O(n) | O(1)  | Reverse array, O(n) swaps |

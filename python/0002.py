@@ -1,7 +1,7 @@
 from leetcode_tester import Tester
-from list_node import ListNode
+from python.src.list_node import ListNode
 
-from typing import List, Optional
+from typing import Optional
 
 
 class Solution:
