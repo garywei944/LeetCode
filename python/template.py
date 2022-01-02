@@ -1,6 +1,6 @@
 from leetcode_tester import Tester
 
-from typing import List
+from typing import Optional, List
 
 
 class Solution:

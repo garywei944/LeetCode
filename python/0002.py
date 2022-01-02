@@ -1,53 +1,30 @@
-from leetcode_tester import Tester, ListNode
+from leetcode_tester import Tester
+from list_node import ListNode
 
 from typing import List, Optional
 
 
-# Definition for singly-linked list.
-# class ListNode:
-#
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
-def add_one(a, b, r):
-    t = a + b + r
-    return t % 10, t // 10
-
-
-def add_other(a, r):
-    return add_one(a, 0, r)
-
-
 class Solution:
-
-    def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> \
-            Optional[ListNode]:
-        rem = 0
+    def addTwoNumbers(
+            self, l1: Optional[ListNode], l2: Optional[ListNode]
+    ) -> Optional[ListNode]:
+        carry = 0
         results = []
+        while l1 or l2 or carry:
+            v1 = l1.val if l1 else 0
+            v2 = l2.val if l2 else 0
 
-        while l1 is not None and l2 is not None:
-            curr, rem = add_one(l1.val, l2.val, rem)
+            carry, curr = divmod(v1 + v2 + carry, 10)
+
+            l1 = l1.next if l1 else None
+            l2 = l2.next if l2 else None
+
             results.append(curr)
 
-            l1 = l1.next
-            l2 = l2.next
-
-        node = l2 if l1 is None else l1
-
-        while node is not None:
-            curr, rem = add_other(node.val, rem)
-            results.append(curr)
-
-            node = node.next
-
-        if rem != 0:
-            results.append(rem)
-
-        result = None
-        for r in results[::-1]:
-            result = ListNode(r, result)
-
-        return result
+        r = None
+        for e in results[::-1]:
+            r = ListNode(e, r)
+        return r
 
 
 if __name__ == '__main__':
@@ -55,7 +32,18 @@ if __name__ == '__main__':
     test = Tester(solution.addTwoNumbers)
 
     test.addTest(
-        [2, 4, 3], [5, 6, 4],
-        [7, 0, 8]
+        ListNode.from_list([2, 4, 3]),
+        ListNode.from_list([5, 6, 4]),
+        ListNode.from_list([7, 0, 8])
+    )
+    test.addTest(
+        ListNode.from_list([0]),
+        ListNode.from_list([0]),
+        ListNode.from_list([0])
+    )
+    test.addTest(
+        ListNode.from_list([9, 9, 9, 9, 9, 9, 9]),
+        ListNode.from_list([9, 9, 9, 9]),
+        ListNode.from_list([8, 9, 9, 9, 0, 0, 0, 1])
     )
     test.doTest()
