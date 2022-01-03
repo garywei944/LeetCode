@@ -65,7 +65,7 @@ class Solution:
         init()
         backtrack()
 
-        return board
+        return board  # Remove this line for LeetCode submission, only for local test purpose
 
 
 if __name__ == '__main__':
