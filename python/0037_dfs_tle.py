@@ -1,13 +1,42 @@
 """
 DFS approach to the problem
 
-Time Limit exceed but it should work
+Time Limit exceed.
+
+To reduce number of searches the algorithm try to update the board by fill some
+position by the only candidate.
 """
 from leetcode_tester import Tester
 
-from typing import Optional, List, Union
+from typing import Optional, List, Union, Tuple
 import copy
 import sys
+
+
+def put_one(board: "Board") -> List[List[str]]:
+    matrix = board.tolist()
+
+    for i in range(9):
+        for j in range(9):
+            if matrix[i][j] == '.':
+                f = False
+                cand = -1
+                for n in range(1, 10):
+                    matrix[i][j] = str(n)
+                    if isValidSudoku(matrix):
+                        if f:
+                            f = False
+                            cand = -1
+                            matrix[i][j] = '.'
+                            break
+                        else:
+                            f = True
+                            cand = n
+
+                    matrix[i][j] = '.'
+                if f:
+                    matrix[i][j] = str(cand)
+                    return matrix
 
 
 class Node:
@@ -22,7 +51,6 @@ def dfs(node: Node, verbose=False, max_depth=sys.maxsize):
     stack = [node.val]
     for i in range(int(max_depth)):
         node = stack.pop(-1)
-        # print(node)
 
         if node.win():
             return node.tolist()
@@ -99,8 +127,23 @@ class Solution:
         """
         Do not return anything, modify board in-place instead.
         """
-        board = dfs(Node(Board(board)), verbose=True)
+        matrix = board
+        board = Board(board)
 
+        flag = True
+        while flag:
+            temp = put_one(board)
+            if temp is None:
+                break
+            else:
+                board = Board(temp)
+
+        if not board.win():
+            print('Do DFS!')
+
+        board = dfs(Node(board), verbose=True)
+
+        matrix[:] = board
         return board
 
 
@@ -135,7 +178,7 @@ if __name__ == '__main__':
     # Make a masked sudoku for debug
     import numpy as np
 
-    n_masks = 20
+    n_masks = 50
     rng = np.random.default_rng()
     mask = rng.permutation(81)[:n_masks]
     masked = copy.deepcopy(answer)
@@ -151,3 +194,7 @@ if __name__ == '__main__':
         game, answer
     )
     test.doTest()
+
+    # print(Board(game))
+    # print(Board(put_one(Board(game))))
+    # print(solution.solveSudoku(game))
