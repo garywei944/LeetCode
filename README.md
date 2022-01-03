@@ -21,6 +21,7 @@ pip install leetcode-tester
 | 0002   | [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/)                                         | Medium     | O(n)   | O(n)  ||
 | 0026   | [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) | Easy       | O(n)   | O(1)  ||
 | 0036   | [Valid Sudoku](https://leetcode.com/problems/valid-sudoku/)                                               | Medium     | O(n^2) | O(n)  | Bitmap for less space             |
+| 0037   | [Sudoku Solver](https://leetcode.com/problems/sudoku-solver/)                                             | Hard       |        |       |                                   |
 | 0048   | [Rotate Image](https://leetcode.com/problems/rotate-image/)                                               | Medium     | O(n^2) | O(1)  | Transpose then reflect via y-axis |
 | 0066   | [Plus One](https://leetcode.com/problems/plus-one/)                                                       | Easy       | O(n)   | O(1)  |                                   |
 | 0122   | [Best Time to Buy and Sell Stock II](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/)   | Medium     | O(n)   | O(1)  ||

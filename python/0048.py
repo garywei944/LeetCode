@@ -67,6 +67,10 @@ class Solution:
                 matrix[i][j], matrix[i][n - j - 1] = \
                     matrix[i][n - j - 1], matrix[i][j]
 
+    # # Approach 3: art of code
+    # def rotate(self, A):
+    #     A[:] = zip(*A[::-1])
+
 
 if __name__ == '__main__':
     solution = Solution()
