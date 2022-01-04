@@ -2,7 +2,7 @@ from leetcode_tester import Tester
 
 from typing import Optional, List
 
-MAX = 2 ** 31
+MAX = 1 << 31
 
 
 class Solution:
