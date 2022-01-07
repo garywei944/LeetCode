@@ -2,17 +2,6 @@
 
 My LeetCode profile: [garywei944](https://leetcode.com/garywei944/)
 
-## Python3
-
-### Tester
-
-I use [Devgum/leetcode_tester](https://github.com/Devgum/leetcode_tester) to
-test codes locally.
-
-```shell
-pip install leetcode-tester
-```
-
 ## Problem Tracks
 
 | Number | Name                                                                                                      | Difficulty | Solution                  | Time        | Space | Notes                                                                                                     |
@@ -38,3 +27,30 @@ pip install leetcode-tester
 | 0344   | [Reverse String](https://leetcode.com/problems/reverse-string/)                                           | Easy       | [python3](python/0344.py) | O(n)        | O(1)  |                                                                                                           |
 | 0350   | [Intersection of Two Arrays II](https://leetcode.com/problems/intersection-of-two-arrays-ii/)             | Easy       | [python3](python/0350.py) | O(n)        | O(n)  |                                                                                                           |
 | 0387   | [First Unique Character in a String](https://leetcode.com/problems/first-unique-character-in-a-string/)   | Easy       | [python3](python/0387.py) | O(n)        | O(n)  |                                                                                                           |
+
+## Python3
+
+### Tester
+
+I use [Devgum/leetcode_tester](https://github.com/Devgum/leetcode_tester) to
+test codes locally.
+
+```shell
+pip install leetcode-tester
+```
+
+### Data Structures
+
+#### ListNode
+
+```python
+from python.src.list_node import ListNode
+```
+
+```python
+# Definition for singly-linked list.
+class ListNode:
+    def __init__(self, val=0, next_=None):
+        self.val = val
+        self.next = next_
+```
