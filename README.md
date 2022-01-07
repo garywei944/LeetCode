@@ -1,6 +1,6 @@
 # LeetCode
 
-[garywei944](https://leetcode.com/garywei944/)
+My LeetCode profile: [garywei944](https://leetcode.com/garywei944/)
 
 ## Python3
 
@@ -13,7 +13,7 @@ test codes locally.
 pip install leetcode-tester
 ```
 
-### Problem Tracks
+## Problem Tracks
 
 | Number | Name                                                                                                      | Difficulty | Solution                  | Time        | Space | Notes                                                                                                     |
 |--------|-----------------------------------------------------------------------------------------------------------|------------|---------------------------|-------------|-------|-----------------------------------------------------------------------------------------------------------|
