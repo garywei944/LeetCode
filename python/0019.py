@@ -1,5 +1,5 @@
 from leetcode_tester import Tester
-from python.src.list_node import ListNode
+from src.list_node import ListNode
 
 from typing import Optional, List
 

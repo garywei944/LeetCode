@@ -23,6 +23,7 @@ My LeetCode profile: [garywei944](https://leetcode.com/garywei944/)
 | 0125   | [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/)                                       | Easy       | [python3](python/0125.py) | O(n)        | O(1)  | Regex                                                                                                     |
 | 0136   | [Single Number](https://leetcode.com/problems/single-number/)                                             | Easy       | [python3](python/0136.py) | O(n)        | O(1)  | XOR                                                                                                       |
 | 0189   | [Rotate Array](https://leetcode.com/problems/rotate-array/)                                               | Medium     | [python3](python/0189.py) | O(n)        | O(1)  | Reverse array, O(n) swaps                                                                                 |
+| 206    | [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/)                                 | Easy       | [python3](python/0206.py) | O(n)        | O(1)  |                                                                                                           |
 | 0237   | [Delete Node in a Linked List](https://leetcode.com/problems/delete-node-in-a-linked-list/)               | Easy       | [python3](python/0237.py) | O(1)        | O(1)  |                                                                                                           |
 | 0242   | [Valid Anagram](https://leetcode.com/problems/valid-anagram/)                                             | Easy       | [python3](python/0242.py) | O(n)        | O(1)  | Sorted Approach take O(n log n) time, O(1) space, but should be faster. Counter Approach takes O(n) time. |
 | 0283   | [Move Zeros](https://leetcode.com/problems/move-zeroes/)                                                  | Easy       | [python3](python/0283.py) | O(n)        | O(1)  |                                                                                                           |
@@ -46,7 +47,7 @@ pip install leetcode-tester
 #### ListNode
 
 ```python
-from python.src.list_node import ListNode
+from src.list_node import ListNode
 ```
 
 ```python
