@@ -1,5 +1,5 @@
 from collections import deque
-from typing import List, Union
+from typing import List, Union, Optional
 
 NULL = 'null'
 null = NULL
@@ -33,16 +33,25 @@ class TreeNode:
 
         return str(s)
 
-    def __eq__(self, root):
-        if not isinstance(root, self.__class__):
-            return False
-        return self.val == root.val and self.left == root.left and self.right == root.right
+    def __eq__(self, other):
+        if isinstance(other, self.__class__):
+            return (
+                    self.val == other.val and
+                    self.left == other.left and
+                    self.right == other.right
+            )
+        return False
 
     @classmethod
-    def from_list(cls, values: List[Union[int, str, None]]):
+    def from_list(
+            cls, values: List[Union[int, str, None]]
+    ) -> Optional['TreeNode']:
         """
         Construct tree from level order traverse
         """
+        if values is None:
+            return None
+
         nodes = [
             TreeNode(e) if e is not None and e != NULL else None
             for e in values
