@@ -6,8 +6,9 @@ from typing import Optional, List
 MAX = float('inf')
 
 
+# BFS approach
 class Solution:
-    def check_bound(self, node, max_=MAX, min_=-MAX):
+    def check(self, node, max_=MAX, min_=-MAX):
         if node is None:
             return True
 
@@ -15,12 +16,12 @@ class Solution:
             return False
 
         return (
-                self.check_bound(node.left, node.val, min_) and
-                self.check_bound(node.right, max_, node.val)
+                self.check(node.left, node.val, min_) and
+                self.check(node.right, max_, node.val)
         )
 
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
-        return self.check_bound(root)
+        return self.check(root)
 
 
 # # In-order approach
