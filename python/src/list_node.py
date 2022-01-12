@@ -1,3 +1,6 @@
+from typing import Optional, Union, List
+
+
 # Definition for singly-linked list.
 class ListNode:
     def __init__(self, val=0, next_=None):
@@ -13,17 +16,17 @@ class ListNode:
     def __eq__(self, node):
         if not isinstance(node, self.__class__):
             return False
-        return self.val.__eq__(node.val) and self.next.__eq__(node.next)
+        return self.val == node.val and self.next == node.next
 
     @classmethod
-    def from_list(cls, value_list):
-        if not value_list:
+    def from_list(cls, values: Union[List[int], int]) -> Optional['ListNode']:
+        if not values:
             return None
-        if not isinstance(value_list, list):
-            return ListNode(value_list)
+        if not isinstance(values, list):
+            return ListNode(values)
 
         r = None
-        for e in value_list[::-1]:
+        for e in values[::-1]:
             r = ListNode(e, r)
 
         return r
