@@ -49,7 +49,7 @@ class TreeNode:
         """
         Construct tree from level order traverse
         """
-        if values is None:
+        if values is None or len(values) == 0:
             return None
 
         nodes = [
