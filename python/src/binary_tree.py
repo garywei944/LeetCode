@@ -2,8 +2,10 @@ from collections import deque
 from typing import List, Union
 
 NULL = 'null'
+null = NULL
 
 
+# Definition for a binary tree node.
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val

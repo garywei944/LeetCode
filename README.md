@@ -15,7 +15,16 @@ pip install leetcode-tester
 
 ### Data Structures
 
-#### ListNode
+All data structures supports `XXXXX.from_list()` to quickly create instance
+from list. e.g.
+
+```python
+ListNode.from_list([2, 4, 3])
+```
+
+creates a linked list of `2 -> 4 -> 3 -> None`.
+
+#### Linked List (ListNode)
 
 ```python
 from src.list_node import ListNode
@@ -27,6 +36,23 @@ class ListNode:
     def __init__(self, val=0, next_=None):
         self.val = val
         self.next = next_
+```
+
+#### Binary Tree (TreeNode)
+
+LeetCode uses level-order traverse(BFS order) to represent a Binary Tree.
+
+```python
+from src.binary_tree import TreeNode, null
+```
+
+```python
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
 ```
 
 ## Problem Tracks
